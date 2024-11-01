@@ -1,0 +1,178 @@
+:root{
+    --primary:#9666ff;
+    --primaryLight:rgba(150, 102, 255,0.47);
+    --primaryDark:#2e106e;
+    
+    --warning:#FF9666;
+    --success:#49FF82;
+    --danger:#FF3A60;
+    --info:#66D0FF;
+    
+    --color:#555;
+    --colorDeep:#333;
+    --colorLight:#ddd;
+    --font:'Open Sans',sans-serif;
+    --bodybg:white;
+}
+
+body {
+    background:linear-gradient(96deg, var(--primaryLight),var(--primary));
+    font-family:var(--font);
+    user-select: none;
+}
+.app{
+    display:block;
+    width:70%;
+    border-radius:0.5rem;
+    overflow:hidden;
+    box-shadow:0 0 5px rgba(0,0,0,0.25);
+    margin:auto;
+    z-index:2;
+    position:fixed;
+    
+
+}
+.app-head{
+    display:flex;
+    width:100%;
+    padding:0.5rem;
+    background:rgba(0,0,0,0.75);
+    backdrop-filter:blur(20px);
+    align-items:center ;
+    justify-content:space-between;
+}
+.app-content{
+
+background:rgba(255,255,255,0.65);
+    backdrop-filter:blur(20px);
+    width:100%;
+    display:block;
+    height: 400px;
+    resize: both;
+}
+.app-title{
+    color:white;
+    font-size:0.7rem;
+}
+.app-btn{
+    width:0.75rem;
+    height:0.75rem;
+    border-radius:0.1rem;
+    background-color:var(--danger);
+    display:inline-block ;
+    margin-right:7px;
+
+}
+.app-btn:nth-child(1){
+    background:var(--success);
+}
+.app-btn:nth-child(2){background:var(--info);}
+.app-btn:nth-child(3){
+    margin-right:15px;
+    background:tomato;
+}
+
+@keyframes closeAnim{
+    0%{
+        transform:scale(1) translateY(0);
+    }
+    50%{
+        transform:scale(0.7);
+    }
+    100%{
+        transform:translateY(200%);
+        opacity:0;
+    }
+}
+
+@keyframes scaleAnim{
+    0%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(2);
+    }
+}
+@keyframes scaleAnimR{
+    0%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(0.5);
+    }
+}
+
+.taskbar{
+    width:100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(20px);
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+}
+.taskbar .left,.taskbar .right{
+    margin:0;
+}
+.taskbar-button,.taskbar-app{
+    padding:0.7rem;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:background 0.25s;
+    
+}
+.taskbar-button:hover{
+    background:rgba(255,255,255,0.25);
+}
+.home,.quicktools{
+    position:fixed;
+    bottom:2.8rem;
+    width:80%;
+    height:70%;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(20px);
+    z-index:999;
+    left:0;
+    box-shadow:0 -3px 5px rgba(0,0,0,0.25);
+    transform:translateY(150%);
+    transition:transform 0.36s ease-in-out;
+    border-top-right-radius:0.5rem;
+    overflow:hidden;
+    color:white;
+}
+.home-nav{
+    padding:0.75rem 0;
+    display:flex;
+    justify-content:space-around;
+    width:100%;
+}
+.quicktools{
+    transform:translateX(50%) translateY(150%);
+    height:50%;
+    border-top-left-radius:0.5rem;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(50px);
+}
+
+
+.search-inp{
+    outline:none;
+    padding:.24rem;
+    background:rgba(255,255,255,0.1);
+    border-radius:0.5rem;
+    border:none;
+    font-size:1.1rem;
+    width:90%;
+    color:white;
+    font-weight:300;
+}
+#time{
+    font-weight:300;
+    font-size:2rem;
+    padding:0.75rem;
+    display:block;
+    
+}
